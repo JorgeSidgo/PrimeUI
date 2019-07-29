@@ -1,0 +1,28 @@
+<div class="full container">
+  <div class="single element container">
+    <p-card header="Libros">
+
+      <form [formGroup]="loginForm">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" formControlName="nombre" pInputText>
+          <label for="float-input">Nombre de Usuario</label>
+        </span>
+        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+          <div *ngIf="f.nombre.errors.required">Ingrese su nombre de usuario</div>
+        </div>
+
+        <span class="ui-float-label">
+          <input id="float-input" type="password" formControlName="password" pPassword [feedback]="false">
+          <label for="float-input">Contraseña</label>
+        </span>
+
+      </form>
+
+      <p-footer>
+        <button (ngClick)="handleSubmit()" pButton type="submit" label="Ingresar"
+          class="ui-button-raised ui-button-primary"></button>
+      </p-footer>
+    </p-card>
+
+  </div>
+</div>
